@@ -24,14 +24,14 @@ user_entry.delete(0, tkinter.END)
 
 def dataextraction(bqpath):
     credentials = service_account.Credentials.from_service_account_file(
-    r'C:\Users\nish3395\OneDrive - Rackspace Inc\Documents\Python_Automation\GCP_authentication.json')
+    r'C:\Users\...\GCP_authentication.json')
 
     client = bigquery.Client(credentials=credentials)
 
     # Perform a query.
     QUERY = (
-        """SELECT * FROM `rax-enterprisebi.report_tables.mbu_status` 
-        WHERE account_number = '5002032' AND device_number IN (1113039) AND backup_date = '20230301'
+        """SELECT * FROM `report_tables` 
+        WHERE filter_1 = '123' AND filter_2 IN (456) AND filter_3 = '20230301'
         """
     )
     query_job = client.query(QUERY)  # API request
