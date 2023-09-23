@@ -4,7 +4,7 @@ import os
 import tkinter
 from tkinter import messagebox
 
-# Line 32 to 51 pertains to the code for uploading files to GCS bucket
+# Line 32 to 56 pertains to the code for uploading files to GCS bucket
 # Instantiating tkinter
 window = tkinter.Tk()
 
@@ -33,16 +33,15 @@ user_entry2.delete(0, tkinter.END)
 def upload_to_gcs(filename, bucket):
     # Setting the environment variable GOOGLE_APPLICATION_CREDENTIALS to the .json file containing credentials
     # To obtain the .json file : IAM -> Service Accounts -> Click on a service account -> Keys -> Add Key (key will be auto downloaded)
-    os.environ[
-        'GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\Users\nish3395\OneDrive - Rackspace Inc\Documents\Python_Automation\rax-enterprisebi-dev-e994aa08b90b.json'
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\credentials.json'
 
     credentials = GoogleCredentials.get_application_default()  # getting key from environment variable and saving into credentials variable
     service = discovery.build('storage', 'v1', credentials=credentials)
-
-    # filename = r'C:\Users\nish3395\OneDrive - Rackspace Inc\Documents\Dashboard\ITS Project\Remediation_data - Test.csv'
+    
+    # filename = r'C:\Test.csv'
     # bucket = 'tableau_source_files'
 
-    body = {'name': 'Remediation_data - Test'}
+    body = {'name': 'Test'}
     req = service.objects().insert(bucket=bucket, body=body, media_body=filename)
     resp = req.execute()
     print(f"File {filename} uploaded to {bucket}.")
