@@ -2,7 +2,7 @@ import datetime
 import os
 import win32com.client
 
-path = os.path.expanduser(r'C:\Users\...\Documents')
+path = os.path.expanduser(r'C:\UserS\Automation')
 
 today = datetime.date.today()
 
