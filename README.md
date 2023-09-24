@@ -1,7 +1,7 @@
-DETAILED PYTHON PROJECTS FOR THE CORPORATE!
+PYTHON PROJECTS TO AUTOMATE TASKS IN YOUR WORKPLACE!
 
 **Introduction** : A series of Basic Python Projects for beginners
 
 **Level** : Beginners
 
-**Objective** : Automate basic BI related tasks using Python.
+**Objective** : Automate basic tasks using Python.
