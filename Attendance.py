@@ -13,4 +13,4 @@ label_subhead.pack(pady=10, padx=5)
 
 window.mainloop()
 
-webbrowser.open('https://rackspace.service-now.com/rack_sp?id=submit_timesheet')
+webbrowser.open('https://timesheet')
